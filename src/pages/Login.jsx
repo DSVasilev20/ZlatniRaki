@@ -88,7 +88,7 @@ const Login = () => {
                 Log In
               </button>
               <p className="login-text">
-                &quot;Don&apos;t have an account?&quot;{" "}
+                Don&apos;t have an account?{" "}
                 <a
                   onClick={() => navigate("/Signup")}
                   style={{
