@@ -1,0 +1,326 @@
+@font-face {
+  font-family: 'OldHarbourAnchor';
+  src: url('./fonts/OldHarbourAnchor.woff2') format('woff2'),
+    url('./fonts/OldHarbourAnchor.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the font to the Welcome section */
+.welcome-section {
+  font-family: 'OldHarbourAnchor', serif;
+  font-size: 100px;
+  /* Adjust font size for emphasis */
+  letter-spacing: 1px;
+  /* Optional: Improve legibility */
+  text-align: center;
+  /* Center the text */
+  color: #ca9544;
+}
+
+/* General App Styles */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --button-bg-color: #ca9544;
+  --button-hover-bg-color: #ac7626;
+  --footer-bg-color: #282c34;
+  --footer-text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  /* Default white or another color */
+  color: var(--text-color);
+  /* Text color */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header Section */
+.App-header {
+  background-color: #282c34;
+  color: white;
+  min-height: auto;
+  /* Remove fixed 100vh */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.main-content {
+  flex-grow: 1;
+  /* Ensures it expands */
+  min-height: calc(100vh - 100px);
+  /* Adjust based on header & footer height */
+}
+
+/* Collection Section */
+.collection-section {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.collection-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.icon-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+.icon-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.icon-card p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Fullscreen Modal */
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff5e57;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.close-fullscreen:hover {
+  background: #e44a48;
+}
+
+.arrow {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prev-arrow {
+  left: 30px;
+}
+
+.next-arrow {
+  right: 30px;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+.scroll-button {
+  background-color: transparent;
+  border: 2px solid #ca9544;
+  color: #ca9544;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #ca9544;
+  color: black;
+}
+
+/* Collection Section */
+.collection-section .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Adjusted spacing between images */
+  justify-content: center;
+  /* Centered gallery */
+}
+
+.collection-section .icon-card {
+  flex: 0 0 calc(33.33% - 20px);
+  /* Ensure 3 items per row */
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.collection-section .icon-card img {
+  width: 300px;
+  /* Adjusted size for 3 per row */
+  height: auto;
+  border-radius: 8px;
+}
+
+.collection-section .icon-card:hover {
+  transform: scale(1.03);
+  /* Interactive hover effect */
+}
+
+.order-button {
+  margin-top: 20px;
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.custom-divider {
+  width: 80%;
+  /* Adjust the width as needed */
+  border: 0;
+  height: 2px;
+  /* Thickness of the line */
+  background: var(--button-bg-color);
+  /* Match the theme color */
+  margin: 20px auto;
+  /* Center the divider with space around it */
+}
+
+
+/* Fullscreen Background with Dark Gradient */
+.header-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Full viewport height */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url("./assets/mountain.jpg");
+  /* Update with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Content Over Background */
+.header-content {
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Offset to align center */
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.header-content h1 {
+  font-size: 7rem;
+  /* Adjust size as needed */
+  margin-bottom: 50px;
+  color: #ca9544;
+}
+
+.header-background .header-content h1 {
+  font-size: 7rem;
+  color: #ca9544;
+}
+
+
+.header-content p {
+  font-size: 1.2rem;
+  /* Adjust size as needed */
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+
+  /* Fix 1: Background image positioning */
+  .header-background {
+    background-position: center 40% !important;
+  }
+
+  /* Adjust welcome text size for mobile */
+  .welcome-section {
+    font-size: 60px !important;
+    line-height: 1.2;
+  }
+
+  /* Make navigation more compact */
+  .left-nav {
+    width: 160px;
+    padding: 10px;
+  }
+
+  .left-nav ul li a {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Further adjust very small screens */
+  .header-content h1 {
+    font-size: 3rem !important;
+  }
+}
+
+.cmfc {
+  color: rgb(56, 56, 56)
+}

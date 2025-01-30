@@ -1,0 +1,217 @@
+/* General Styles */
+.contact-container {
+  padding: 20px 20px;
+  /* Reduce padding to bring content closer to the top */
+  margin-top: -20px;
+  /* Negative margin to shift the content up */
+  background-color: #1e1e1e;
+  /* Keep background consistent */
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.contact-header {
+  font-family: 'OldHarbourAnchor', serif;
+  font-size: 3rem;
+  color: #e6b450;
+  /* Warm gold */
+  margin-bottom: 10px;
+}
+
+.contact-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #cccccc;
+  /* Muted light gray */
+}
+
+/* Contact Content */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  background: #2a2a2a;
+  /* Darker gray form background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  /* Deeper shadow for darker theme */
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e6b450;
+  /* Gold for labels */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555555;
+  /* Subtle border */
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #f0f0f0;
+  /* Light text */
+  background: #333333;
+  /* Dark input background */
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e6b450;
+  /* Gold focus border */
+  box-shadow: 0 0 3px rgba(230, 180, 80, 0.5);
+}
+
+.submit-button {
+  background-color: #e6b450;
+  /* Gold button */
+  color: #1e1e1e;
+  /* Dark text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #d49c38;
+  /* Slightly darker gold */
+}
+
+/* Contact Details */
+.contact-info {
+  text-align: left;
+}
+
+.contact-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #e6b450;
+  /* Gold heading */
+}
+
+.contact-details p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #cccccc;
+  /* Muted light gray */
+}
+
+.contact-details a {
+  color: #e6b450;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Map Placeholder */
+.map-placeholder {
+  height: 200px;
+  background: #3a3a3a;
+  /* Darker placeholder */
+  border: 2px dashed #555555;
+  /* Muted dashed border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #999999;
+  /* Light muted text */
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .map-placeholder {
+    height: 150px;
+  }
+
+  .header-content {
+    position: absolute;
+    /* Confirm the property is correctly set */
+  }
+}
+
+.contact-page .sidebar,
+.contact-page .navbar {
+  display: none;
+}
+
+.back-button-container {
+  text-align: left;
+  margin: 0;
+  /* Remove margin for alignment */
+  background-color: #1e1e1e;
+  /* Match background color */
+  padding: 20px 40px;
+  /* Add padding for spacing */
+}
+
+.back-button {
+  background-color: #e6b450;
+  /* Gold button */
+  color: #1e1e1e;
+  /* Dark text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'OldHarbourAnchor', serif;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d49c38;
+  /* Slightly darker gold */
+}
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  /* Match dark theme background */
+  color: #f0f0f0;
+  /* Light text */
+  height: 100%;
+  /* Full height for consistency */
+}
+
+.contact-page {
+  margin-top: 0;
+  /* Remove unnecessary margin */
+  padding-top: 0;
+  /* Remove padding to align content */
+}

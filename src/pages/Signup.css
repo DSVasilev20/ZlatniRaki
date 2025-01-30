@@ -1,0 +1,238 @@
+/* General Styles */
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* At least full height */
+  padding: 20px;
+  /* Add padding to prevent overlap */
+  box-sizing: border-box;
+}
+
+/* Signup Container */
+.signup-container {
+  text-align: center;
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Headers */
+.signup-header {
+  font-family: 'OldHarbourAnchor', serif;
+  font-size: 2.5rem;
+  color: #e6b450;
+  margin-bottom: 20px;
+}
+
+.signup-subtext {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #cccccc;
+}
+
+/* Social Login */
+.login-option {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 48%;
+  /* Ensures equal size */
+  text-align: center;
+}
+
+.option a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f0f0f0;
+  gap: 10px;
+}
+
+.option a:hover {
+  background: #444;
+}
+
+.option img {
+  width: 20px;
+  height: 20px;
+}
+
+.option:hover {
+  background-color: #444;
+}
+
+/* Separator */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  margin: 15px 0;
+}
+
+.separator span {
+  background: #2a2a2a;
+  padding: 0 10px;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.name-group .form-group {
+  flex: 1;
+  /* Makes both input fields take equal width */
+  min-width: 0;
+  /* Ensures proper resizing */
+}
+
+.name-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.form-group {
+  text-align: left;
+  width: 100%;
+}
+
+.signup-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e6b450;
+  margin-bottom: 4px;
+}
+
+/* Inputs */
+.short-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #f0f0f0;
+  background: #333333;
+}
+
+.short-input:focus {
+  outline: none;
+  border-color: #e6b450;
+  box-shadow: 0 0 3px rgba(230, 180, 80, 0.5);
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group label {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #e6b450;
+  color: #1e1e1e;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #d49c38;
+}
+
+/* Sign-up link */
+.sign-up-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.sign-up-text a {
+  color: #e6b450;
+  text-decoration: none;
+}
+
+.sign-up-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .signup-container {
+    width: 78%;
+  }
+
+  .name-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .name-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .custom-signup-container {
+    margin-top: 40px;
+    /* Moves the form down */
+  }
+
+  .login-option {
+    flex-direction: column;
+    align-items: center;
+    /* Ensures centering */
+    gap: 10px;
+  }
+
+  .option {
+    width: 90%;
+    /* Adjust to fit properly */
+    max-width: 300px;
+  }
+
+  .name-group .form-group {
+    min-width: 100%;
+  }
+}
+
+.login-link {
+  color: #e6b450;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}

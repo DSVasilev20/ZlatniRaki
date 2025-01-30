@@ -1,0 +1,128 @@
+/* General Styles */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Login Container */
+.login-container {
+  text-align: center;
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Headers */
+.login-header {
+  font-family: 'OldHarbourAnchor', serif;
+  font-size: 2.5rem;
+  color: #e6b450;
+  margin-bottom: 20px;
+}
+
+.login-subtext {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #cccccc;
+}
+
+/* Social Login */
+.login-option {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 48%;
+  text-align: center;
+}
+
+.option a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f0f0f0;
+  gap: 10px;
+}
+
+.option img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Separator */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  margin: 15px 0;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  text-align: left;
+  width: 100%;
+}
+
+.short-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #333;
+  color: #f0f0f0;
+}
+
+.submit-button {
+  background-color: #e6b450;
+  color: #1e1e1e;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .login-option {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .custom-login-container {
+    margin-top: 5px;
+    /* Moves the form down */
+  }
+
+  .option {
+    width: 90%;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,82 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    /* Fills the available space above the footer */
+}
+
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 20px 15px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    /* Include padding in width */
+    margin-top: auto;
+    /* Push footer to the bottom */
+}
+
+
+.footer-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-zlatniraki {
+    font-family: 'OldHarbourAnchor', serif;
+    color: #ca9544;
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-links li {
+        margin: 0;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    /* Full height for viewport */
+    margin: 0;
+    /* Remove default margins */
+    display: flex;
+    /* Enable flex layout */
+    flex-direction: column;
+}

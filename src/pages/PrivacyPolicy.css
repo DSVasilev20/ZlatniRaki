@@ -1,0 +1,101 @@
+/* General Styles */
+.privacy-policy-page {
+  padding: 0;
+  margin: 0;
+  background-color: #1e1e1e;
+  /* Dark theme */
+  color: #f0f0f0;
+  /* Light text */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  position: relative;
+}
+
+.privacy-policy-container {
+  padding: 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.privacy-policy-header {
+  font-size: 3rem;
+  color: #e6b450;
+  /* Warm gold */
+  margin-bottom: 20px;
+  font-family: 'OldHarbourAnchor', serif;
+  text-align: center;
+}
+
+.privacy-policy-intro {
+  font-size: 1.2rem;
+  color: #cccccc;
+  /* Muted light gray */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Back Button Styles */
+.privacy-policy-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: 'OldHarbourAnchor', serif;
+  background-color: transparent;
+  color: #ca9544;
+  /* Gold color */
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.privacy-policy-back-button:hover {
+  color: #e6b450;
+  /* Lighter gold on hover */
+}
+
+/* Content Section */
+.privacy-policy-content {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.privacy-policy-section {
+  margin-bottom: 40px;
+}
+
+.privacy-policy-section h2 {
+  font-size: 1.8rem;
+  color: #e6b450;
+  /* Warm gold */
+  margin-bottom: 15px;
+  font-family: 'OldHarbourAnchor', serif;
+}
+
+.privacy-policy-section p {
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-policy-header {
+    font-size: 2rem;
+  }
+
+  .privacy-policy-intro {
+    font-size: 1rem;
+  }
+
+  .privacy-policy-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .privacy-policy-section p {
+    font-size: 0.9rem;
+  }
+
+  .privacy-policy-back-button {
+    font-size: 1rem;
+  }
+}

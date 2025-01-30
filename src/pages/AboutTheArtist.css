@@ -1,0 +1,89 @@
+/* General Styles */
+.about-the-artist-page {
+  padding: 0;
+  margin: 0;
+  background-color: #1e1e1e;
+  /* Dark theme */
+  color: #f0f0f0;
+  /* Light text */
+}
+
+.about-the-artist-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-the-artist-header {
+  font-size: 3rem;
+  color: #e6b450;
+  /* Warm gold */
+  margin-bottom: 20px;
+  font-family: 'OldHarbourAnchor', serif;
+}
+
+.about-the-artist-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.artist-details {
+  text-align: left;
+  position: relative;
+  /* Needed for layering name over text */
+}
+
+.artist-name {
+  font-size: 1.5rem;
+  color: #e6b450;
+  /* Warm gold */
+  font-family: 'OldHarbourAnchor', serif;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.artist-details p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #cccccc;
+  /* Muted light gray */
+}
+
+.artist-image-wrapper {
+  text-align: center;
+  margin-top: 20px;
+  /* Adds space above the image */
+}
+
+.artist-image {
+  max-width: 70%;
+  /* Reduce image size for larger screens */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  /* Subtle shadow */
+  margin-top: 10px;
+  /* Optional: Fine-tune additional spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-the-artist-header {
+    margin-top: 20px;
+    /* Add extra space to prevent overlap */
+  }
+
+  .about-the-artist-content {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .artist-image {
+    max-width: 80%;
+    /* Reduce image size for smaller screens */
+  }
+}
