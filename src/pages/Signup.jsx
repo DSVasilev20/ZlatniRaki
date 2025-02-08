@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
 import googleImage from "../assets/google.png";
