@@ -1,4 +1,4 @@
-import "../../App.css";
+import "./ProductCard.css";
 import PropTypes from "prop-types";
 
 const ProductCard = ({ image, index, openFullscreen }) => {

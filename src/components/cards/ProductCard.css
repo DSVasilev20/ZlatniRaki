@@ -1,0 +1,42 @@
+.icon-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+.icon-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.icon-card p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.collection-section .icon-card {
+  flex: 0 0 calc(33.33% - 20px);
+  /* Ensure 3 items per row */
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.collection-section .icon-card img {
+  width: 300px;
+  /* Adjusted size for 3 per row */
+  height: auto;
+  border-radius: 8px;
+}
+
+.collection-section .icon-card:hover {
+  transform: scale(1.03);
+  /* Interactive hover effect */
+}

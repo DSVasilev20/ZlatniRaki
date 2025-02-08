@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../App.css";
+import "./Home.css";
 import yesImage from "../assets/yes.png";
 import ProductCard from "../components/cards/ProductCard";
 
