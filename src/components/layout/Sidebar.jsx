@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../../App.css";
 import "./Sidebar.css";
 import { FaBars } from "react-icons/fa"; // Icon library for the hamburger menu
