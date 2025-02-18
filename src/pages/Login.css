@@ -82,6 +82,15 @@
   gap: 15px;
 }
 
+.login-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e6b450;
+  margin-bottom: 4px;
+}
+
+
 .form-group {
   text-align: left;
   width: 100%;

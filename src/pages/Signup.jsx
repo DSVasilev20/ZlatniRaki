@@ -25,8 +25,9 @@ const Signup = () => {
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
@@ -35,8 +36,35 @@ const Signup = () => {
       alert("You must agree to the terms and conditions!");
       return;
     }
-    console.log("Signup Successful:", formData);
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/signup', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+          agreeToTerms: formData.agreeToTerms,
+          subscribeEmailList: formData.subscribeEmailList,
+        }),
+      });
+      
+      const data = await response.json();
+      if (!response.ok) {
+        alert(data.error || 'Signup failed.');
+        return;
+      }
+      
+      console.log("Signup Successful:", data);
+      // Optionally redirect to login page after signup
+      navigate("/login");
+    } catch (error) {
+      console.error("Error during signup:", error);
+    }
   };
+  
 
   return (
     <div className="custom-signup-container">

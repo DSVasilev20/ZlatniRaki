@@ -20,10 +20,33 @@ const Login = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Successful:", formData);
-  };
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+      
+      const data = await response.json();
+      if (!response.ok) {
+        alert(data.error || 'Login failed.');
+        return;
+      }
+      
+      console.log("Login Successful:", data);
+      // Store token in localStorage or manage it via cookies (preferably HttpOnly cookies in a real app)
+      localStorage.setItem('token', data.token);
+      // Redirect or update UI as needed
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };  
 
   return (
     <div className="custom-login-container">
