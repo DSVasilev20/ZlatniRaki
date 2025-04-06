@@ -2,29 +2,89 @@ import { useState } from "react";
 import "./Home.css";
 import ProductCard from "../components/cards/ProductCard";
 
-// Auto-import all images from the assets folder
-const images = import.meta.glob("../assets/*.png", { eager: true });
+// Auto-import all images (png, jpg, jpeg)
+const images = import.meta.glob("../assets/*.{png,jpg,jpeg}", { eager: true });
 
-// Function to get images based on product name
-const generateProductImages = (productName) => {
-  return Object.keys(images)
-    .filter((key) => key.includes(productName))
-    .map((key) => images[key].default)
-    .sort(); // Ensures they are in the correct order
-};
+// Map images to a simpler format: { "filename.png": imagePath }
+const imageMap = Object.fromEntries(
+  Object.entries(images).map(([path, module]) => [
+    path.split("/").pop(),
+    module.default,
+  ])
+);
 
-// Define the products dynamically
+// Define products with custom image filenames
 const products = [
-  { id: 1, name: "Product_first", images: generateProductImages("Product_first") },
-  { id: 2, name: "Product_second", images: generateProductImages("Product_second") },
-  { id: 3, name: "Product_third", images: generateProductImages("Product_third") },
-  { id: 4, name: "Product_first", images: generateProductImages("Product_first") },
-  { id: 5, name: "Product_second", images: generateProductImages("Product_second") },
-  { id: 6, name: "Product_third", images: generateProductImages("Product_third") },
-  { id: 7, name: "Product_first", images: generateProductImages("Product_first") },
-  { id: 8, name: "Product_second", images: generateProductImages("Product_second") },
-  { id: 9, name: "Product_third", images: generateProductImages("Product_third") },
-  { id: 10, name: "Product_first", images: generateProductImages("Product_first") },
+  {
+    id: 1,
+    title: "The Last Supper",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "available",
+    price: "799.00",
+  },
+  {
+    id: 2,
+    title: "Saint Nicholas",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "sold",
+    price: "799.00",
+  },
+  {
+    id: 3,
+    title: "Virgin Mary with Child",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "available",
+    price: "799.00",
+  },
+  {
+    id: 4,
+    title: "The Ascension",
+    images: [imageMap["realicon.jpg"]],
+    status: "sold",
+    price: "799.00",
+  },
+  {
+    id: 5,
+    title: "Saint George",
+    images: [imageMap["realicon.jpg"]],
+    status: "available",
+    price: "799.00",
+  },
+  {
+    id: 6,
+    title: "Christ Pantocrator",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "sold",
+    price: "799.00",
+  },
+  {
+    id: 7,
+    title: "Annunciation",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "available",
+    price: "799.00",
+  },
+  {
+    id: 8,
+    title: "Saint John the Baptist",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "sold",
+    price: "799.00",
+  },
+  {
+    id: 9,
+    title: "Holy Trinity",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "available",
+    price: "799.00",
+  },
+  {
+    id: 10,
+    title: "Transfiguration",
+    images: [imageMap["realicon.jpg"], imageMap["realicon.jpg"]],
+    status: "sold",
+    price: "799.00",
+  },
 ];
 
 const Home = () => {
@@ -52,7 +112,9 @@ const Home = () => {
   const goToPrevImage = () => {
     if (currentProductIndex !== null) {
       const productImages = products[currentProductIndex].images;
-      setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+      setCurrentImageIndex(
+        (prev) => (prev - 1 + productImages.length) % productImages.length
+      );
     }
   };
 
@@ -63,8 +125,15 @@ const Home = () => {
         <div className="header-content">
           <h1 className="welcome-section">Zlatni Raki</h1>
           <p>Explore our beautifully crafted, hand-carved Christian icons.</p>
-          <button className="scroll-button" onClick={() => document.getElementById("collection-section").scrollIntoView({ behavior: "smooth" })}>
-            Our Collection
+          <button
+            className="scroll-button"
+            onClick={() =>
+              document
+                .getElementById("collection-section")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            COLLECTION
           </button>
         </div>
       </div>
@@ -76,11 +145,22 @@ const Home = () => {
         </div>
         <hr className="custom-divider" />
         <div className="gallery">
-          {products.map((product, productIndex) => (
-            <ProductCard key={product.id} product={product} productIndex={productIndex} openFullscreen={openFullscreen} />
-          ))}
+          {products
+            .slice()
+            .sort((a, b) => (a.status === "sold") - (b.status === "sold")) // Move sold to bottom
+            .map((product, index) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                productIndex={index}
+                openFullscreen={openFullscreen}
+              />
+            ))}
         </div>
-        <button className="order-button" onClick={() => (window.location.href = "/request-a-custom-icon")}>
+        <button
+          className="order-button"
+          onClick={() => (window.location.href = "/request-a-custom-icon")}
+        >
           Request a Custom Icon
         </button>
       </section>
@@ -88,14 +168,22 @@ const Home = () => {
       {/* Fullscreen Modal */}
       {isFullscreen && currentProductIndex !== null && (
         <div className="fullscreen-container">
-          <button className="close-fullscreen" onClick={closeFullscreen}>✖</button>
-          <button className="arrow prev-arrow" onClick={goToPrevImage}>◀</button>
+          <button className="close-fullscreen" onClick={closeFullscreen}>
+            ✖
+          </button>
+          <button className="arrow prev-arrow" onClick={goToPrevImage}>
+            ◀
+          </button>
           <img
             className="fullscreen-image"
             src={products[currentProductIndex].images[currentImageIndex]}
-            alt={`Product ${currentProductIndex + 1} - Image ${currentImageIndex + 1}`}
+            alt={`${products[currentProductIndex].title} - Image ${
+              currentImageIndex + 1
+            }`}
           />
-          <button className="arrow next-arrow" onClick={goToNextImage}>▶</button>
+          <button className="arrow next-arrow" onClick={goToNextImage}>
+            ▶
+          </button>
         </div>
       )}
     </div>

@@ -1,58 +1,51 @@
-.icon-card {
-  position: relative;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 per row on desktop */
+  gap: 40px;
+  padding: 40px;
+  max-width: 2000px; /* Wider container for bigger cards */
+  margin: 0 auto;
+  justify-items: center; /* Center the cards in their grid columns */
 }
 
-.icon-card:hover .click-to-explore {
-  background-color: rgba(0, 0, 0, 0.8);
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Stack to 1 per row on smaller screens */
+  }
 }
 
-.icon-card img {
+.product-card {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.icon-card p {
-  margin: 10px 0 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.collection-section .icon-card {
-  flex: 0 0 calc(33.33% - 20px);
+  max-width: 550px; /* Allows the cards to grow large */
+  padding: 16px;
+  box-sizing: border-box;
   text-align: center;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
-.collection-section .icon-card img {
-  width: 300px;
-  height: auto;
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square image */
+  object-fit: cover;   /* Crop image to fill square */
   border-radius: 8px;
+  display: block;
 }
 
-.collection-section .icon-card:hover {
-  transform: scale(1.03);
+.product-title {
+  font-family: "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 0.95rem;
+  margin: 12px 0 4px 0;
 }
 
-.click-to-explore {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 8px;
-  border-radius: 5px;
-  font-size: 14px;
+.product-price {
   font-weight: bold;
-  pointer-events: none;
+  color: #333;
+  font-size: 1rem;
+  margin: 0 0 12px 0; /* Space after price */
 }
